@@ -4,7 +4,7 @@ Complete environment setup, to fuzz MQTT protocol using AFLNET, requires install
 1. To compile and setup AFLNET, use following commands. <br/>
     ###download aflnet source code from git repository <br/>
     git clone &#<link to the aflnet branch &#> aflnet_mqtt <br/>
-    cd aflnet <br/>
+    cd aflnet_mqtt <br/>
     make clean all <br/>
     cd llvm_mode <br/>
     make <br/>
@@ -17,6 +17,7 @@ For more details about aflnet setup please visit the website https://github.com/
 2. We have used Mosquitto 1.5.5 MQTT broker implementation. To install this use follwing commands. <br/>
 	git clone https://github.com/eclipse/mosquitto/tree/v1.5.5 mqtt_broker <br/>
 	#we have included vulnerability in mosquitto broker code to check the effectiveness of our implementation. Download buggy mosquitto folder for this code. <br/>
+	git clone buggy_mosquitto <br/>
 	cd mqtt_broker <br/>
 	#This command is used to instrument the mosquitto broker. <br/> 
 	make CC=afl-gcc CXX=afl-g++ <br/>
