@@ -32,4 +32,5 @@ mosquitto clients can be started by using <br/>
 Once aflnet and mosquitto binaries are installed, you can run following fuzz command to fuzz Mosquitto broker using aflnet. <br/>
 	afl-fuzz -d -i $AFLNET/tutorials/mqtt/in_mqtt -o $WORKDIR/mqtt_out -N tcp://127.0.0.1/1883  -P MQTT -D 10000 -q 3 -s 3 -E -K -R -n mosquitto <br/>
 you have to create mqtt_out in your workdir folder before running the command to collect output. <br/>
-To stop fuzzing user should press ctrl+c. 
+To stop fuzzing user should press ctrl+c.  <br/>
+3. To generate the input traffic you can follow steps mentioned in step1 of tutorials section in original AFLNET github repository https://github.com/aflnet/aflnet. 
