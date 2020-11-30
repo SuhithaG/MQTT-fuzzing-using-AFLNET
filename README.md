@@ -3,7 +3,7 @@ In this project we have included support for MQTT protocol in AFLNET.
 Complete environment setup, to fuzz MQTT protocol using AFLNET, requires installation of AFLNET and MQTT broker and client binaries. 
 1. To compile and setup AFLNET, use following commands. <br/>
     ###download aflnet source code from git repository <br/>
-    git clone &#<link to the aflnet branch &#> aflnet_mqtt <br/>
+    git clone https://github.com/SuhithaG/CSE543-Project3/tree/main/aflnet-master_mqtt aflnet_mqtt <br/>
     cd aflnet_mqtt <br/>
     make clean all <br/>
     cd llvm_mode <br/>
@@ -30,6 +30,6 @@ mosquitto clients can be started by using <br/>
 	mosquitto_pub -t 'topic name' -m 'message to be sent on topic specified' <br/>
 
 Once aflnet and mosquitto binaries are installed, you can run following fuzz command to fuzz Mosquitto broker using aflnet. <br/>
-	afl-fuzz -d -i $WORKDIR/in_mqtt -o $WORKDIR/mqtt_out -N tcp://127.0.0.1/1883  -P MQTT -D 10000 -q 3 -s 3 -E -K -R -n mosquitto <br/>
-you have to create mqtt_out in your workdir and provide traffic in raw format in in_mqtt folder before running the command. <br/>
+	afl-fuzz -d -i $AFLNET/tutorials/mqtt/in_mqtt -o $WORKDIR/mqtt_out -N tcp://127.0.0.1/1883  -P MQTT -D 10000 -q 3 -s 3 -E -K -R -n mosquitto <br/>
+you have to create mqtt_out in your workdir folder before running the command to collect output. <br/>
 To stop fuzzing user should press ctrl+c. 
