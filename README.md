@@ -16,9 +16,9 @@ Complete environment setup, to fuzz MQTT protocol using AFLNET, requires install
 For more details about aflnet setup please visit the website https://github.com/aflnet/aflnet . <br/>
 2. We have used Mosquitto 1.5.5 MQTT broker implementation. To install this use follwing commands. <br/>
 	git clone https://github.com/eclipse/mosquitto/tree/v1.5.5 mqtt_broker <br/>
-	#we have included vulnerability in mosquitto broker code to check the effectiveness of our implementation. # For this code use following command. <br/>
-	git clone https://github.com/SuhithaG/CSE543-Project3/tree/main/buggy_mosquitto <br/>
-	cd mqtt_broker <br/>
+	#we have included vulnerability in mosquitto broker code to check the effectiveness of our implementation.For this use following command. <br/>
+	git clone https://github.com/SuhithaG/CSE543-Project3/tree/main/buggy_mosquitto buggy_mosquitto <br/>
+	cd mqtt_broker or buggy_mosquitto <br/>
 	#This command is used to instrument the mosquitto broker. <br/> 
 	make CC=afl-gcc CXX=afl-g++ <br/>
 	make test CC=afl-gcc CXX=afl-g++ <br/>
