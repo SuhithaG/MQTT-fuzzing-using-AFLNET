@@ -1,0 +1,8 @@
+digraph g {
+	node [color=black];
+	edge [color=black];
+	0	 [color=blue];
+	32	 [color=blue];
+	0 -> 32 [key=new_edge,
+	color=blue];
+}

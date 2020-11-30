@@ -1,0 +1,60 @@
+DESCRIBE rtsp://127.0.0.1:8554/wavAudioTest RTSP/1.0
+CSeq: 2
+User-Agent: ./testRTSPClient (LIVE555 Streaming Media v2018.08.28)
+Accept: application/sdp
+
+RTSP/1.0 200 OK
+CSeq: 2
+Date: Tue, Jan 28 2020 00:06:54 GMT
+Content-Base: rtsp://127.0.0.1:8554/wavAudioTest/
+Content-Type: application/sdp
+Content-Length: 374
+
+v=0
+o=- 1580169946877258 1 IN IP4 10.0.2.15
+s=Session streamed by "testOnDemandRTSPServer"
+i=wavAudioTest
+t=0 0
+a=tool:LIVE555 Streaming Media v2018.08.28
+a=type:broadcast
+a=control:*
+a=range:npt=0-5.044
+a=x-qt-text-nam:Session streamed by "testOnDemandRTSPServer"
+a=x-qt-text-inf:wavAudioTest
+m=audio 0 RTP/AVP 10
+c=IN IP4 0.0.0.0
+b=AS:1411
+a=control:track1
+SETUP rtsp://127.0.0.1:8554/wavAudioTest/track1 RTSP/1.0
+CSeq: 3
+User-Agent: ./testRTSPClient (LIVE555 Streaming Media v2018.08.28)
+Transport: RTP/AVP;unicast;client_port=40638-40639
+
+RTSP/1.0 200 OK
+CSeq: 3
+Date: Tue, Jan 28 2020 00:06:54 GMT
+Transport: RTP/AVP;unicast;destination=127.0.0.1;source=127.0.0.1;client_port=40638-40639;server_port=6970-6971
+Session: 000022B8;timeout=65
+
+PLAY rtsp://127.0.0.1:8554/wavAudioTest/ RTSP/1.0
+CSeq: 4
+User-Agent: ./testRTSPClient (LIVE555 Streaming Media v2018.08.28)
+Session: 000022B8
+Range: npt=0.000-
+
+RTSP/1.0 200 OK
+CSeq: 4
+Date: Tue, Jan 28 2020 00:06:54 GMT
+Range: npt=0.000-
+Session: 000022B8
+RTP-Info: url=rtsp://127.0.0.1:8554/wavAudioTest/track1;seq=24727;rtptime=1157405880
+
+TEARDOWN rtsp://127.0.0.1:8554/wavAudioTest/ RTSP/1.0
+CSeq: 5
+User-Agent: ./testRTSPClient (LIVE555 Streaming Media v2018.08.28)
+Session: 000022B8
+
+RTSP/1.0 200 OK
+CSeq: 5
+Date: Tue, Jan 28 2020 00:07:01 GMT
+
